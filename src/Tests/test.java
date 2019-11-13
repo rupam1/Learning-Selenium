@@ -77,9 +77,9 @@ public class test extends testbase{
 		//customerselection.GetAPIRequest();
 	}
 
-	@AfterSuite
-	public void quit() {
-		driver.quit();
-	}
+	//@AfterSuite
+	//public void quit() {
+		//driver.quit();
+	//}
 
 }
