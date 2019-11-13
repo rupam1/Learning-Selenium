@@ -2,6 +2,7 @@ package Tests;
 
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
 
 import Pages.CustomerSelection;
@@ -76,9 +77,9 @@ public class test extends testbase{
 		//customerselection.GetAPIRequest();
 	}
 
-	//@AfterSuite
-	//public void quit() {
-		//driver.quit();
-	//}
+	@AfterSuite
+	public void quit() {
+		driver.quit();
+	}
 
 }
