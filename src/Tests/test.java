@@ -2,11 +2,13 @@ package Tests;
 
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import org.testng.annotations.AfterSuite;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import Pages.CustomerSelection;
 import Pages.LoginPage;
+import Pages.takeScrnshot;
 
 public class test extends testbase{
 	
@@ -67,7 +69,7 @@ public class test extends testbase{
 		loginpage.SetEmail("rupam@metatude.com");
 		loginpage.SetPassword("rupam123");
 		loginpage.ClickLogin();
-		Assert.assertEquals(loginpage.Chklogoutbtn(), "LOG OUT");
+		Assert.assertEquals(loginpage.Chklogoutbtn(), "LOG OUT1");
 		
 	}
 	@Test(priority=7)
@@ -87,9 +89,22 @@ public class test extends testbase{
 	public void ChkRegularType() {
 		CustomerSelection customerselection = PageFactory.initElements(driver, CustomerSelection.class);
 		String Reg = customerselection.ChkRegularAccntIsDisplaying();
-		Assert.assertEquals(Reg, "Regular");
+		Assert.assertEquals(Reg, "Regular1");
 		
 	}
+	
+	
+	// It will execute after every test execution 
+	@AfterMethod
+	public void tearDown(ITestResult result)
+	{
+		
+		takeScrnshot tkscrn = PageFactory.initElements(driver, takeScrnshot.class);
+		tkscrn.teardown(result);
+	}
+		
+		
+	
 
 	//@AfterSuite
 	//public void quit() {
