@@ -74,7 +74,21 @@ public class test extends testbase{
 	public void ChkAccountType() {
 		CustomerSelection customerselection = PageFactory.initElements(driver, CustomerSelection.class);
 		customerselection.ChkAccountTypeDropDownBtn();
-		//customerselection.GetAPIRequest();
+		customerselection.ChkRegularAccntIsDisplaying();
+	}
+	
+	@Test(priority=8)
+	public void Chksearchbox() {
+		CustomerSelection customerselection = PageFactory.initElements(driver, CustomerSelection.class);
+		customerselection.ChkSearchboxDetails();
+	}
+	
+	@Test(priority=9)
+	public void ChkRegularType() {
+		CustomerSelection customerselection = PageFactory.initElements(driver, CustomerSelection.class);
+		String Reg = customerselection.ChkRegularAccntIsDisplaying();
+		Assert.assertEquals(Reg, "Regular");
+		
 	}
 
 	//@AfterSuite

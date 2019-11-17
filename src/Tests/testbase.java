@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeTest;
 
 public class testbase {
 	
-	WebDriver driver;
+	public static WebDriver driver;
 	@BeforeTest
 	public void setup() {
 	 
