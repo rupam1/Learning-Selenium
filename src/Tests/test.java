@@ -69,7 +69,7 @@ public class test extends testbase{
 		loginpage.SetEmail("rupam@metatude.com");
 		loginpage.SetPassword("rupam123");
 		loginpage.ClickLogin();
-		Assert.assertEquals(loginpage.Chklogoutbtn(), "LOG OUT1");
+		Assert.assertEquals(loginpage.Chklogoutbtn(), "LOG OUT");
 		
 	}
 	@Test(priority=7)
@@ -89,7 +89,7 @@ public class test extends testbase{
 	public void ChkRegularType() {
 		CustomerSelection customerselection = PageFactory.initElements(driver, CustomerSelection.class);
 		String Reg = customerselection.ChkRegularAccntIsDisplaying();
-		Assert.assertEquals(Reg, "Regular1");
+		Assert.assertEquals(Reg, "Regular");
 		
 	}
 	
