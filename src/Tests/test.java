@@ -12,10 +12,11 @@ import Pages.takeScrnshot;
 
 public class test extends testbase{
 	
+	//public static LoginPage loginpage = PageFactory.initElements(driver, LoginPage.class);
 	@Test(priority=0)
 	public void EmailErrorMessageCheck() {
-		LoginPage loginpage = PageFactory.initElements(driver, LoginPage.class);
 		
+		LoginPage loginpage = PageFactory.initElements(driver, LoginPage.class);
 		String errormsg = loginpage.emailerrormessage();
 		Assert.assertEquals(errormsg, "Please provide your email");
 	}
@@ -67,7 +68,7 @@ public class test extends testbase{
 	public void LoginTestWithValidUserAndPassword() {
 		LoginPage loginpage = PageFactory.initElements(driver, LoginPage.class);
 		loginpage.SetEmail("rupam@metatude.com");
-		loginpage.SetPassword("rupam123");
+		loginpage.SetPassword("Rupam@@100");
 		loginpage.ClickLogin();
 		Assert.assertEquals(loginpage.Chklogoutbtn(), "LOG OUT");
 		

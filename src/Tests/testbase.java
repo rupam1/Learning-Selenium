@@ -25,7 +25,9 @@ public class testbase {
 	 //Maximize the window
 	 driver.manage().window().maximize();
 	 //Request the URL
-	 driver.get("http://192.168.255.227:8080/ign-frontend");
+	 //driver.get("http://192.168.0.106:8080/ign-frontend");
+	 driver.get("https://betadashboard.ignity.com/");
+	 
 	
 	 
 	
